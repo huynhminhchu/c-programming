@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "stddef.h": "c"
+        "stddef.h": "c",
+        "__bit_reference": "c",
+        "bitset": "c",
+        "unordered_map": "c",
+        "csapp.h": "c"
     }
 }
