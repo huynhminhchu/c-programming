@@ -6,37 +6,31 @@
 
 #define SIZE 100
 
-int read_line(char str[], int n)
-{
-    int ch, i = 0;
-    while ((ch = getchar()) != '\n')
-        if (i < n)
-            str[i++] = ch;
-    str[i] = '\0'; /* terminates string */
-    return i; /* number of characters stored */
-}
+char current_word[SIZE+1];
+char smallest_word[SIZE+1];
+char largest_word[SIZE+1];
 
+void input_word(void)
+{
+    printf("Enter word: ");
+    scanf("%s", current_word);
+}
 int main(void)
 {
-    // char *words[SIZE];
-    // int i = 0;
-    // int j = 0; 
-    // char ch;
+    input_word();
+    strcpy(smallest_word, current_word);
+    strcpy(largest_word, current_word);
+    while (true){
+        input_word();
+        if (strcmp(largest_word, current_word) < 0)
+            strcpy(largest_word, current_word);
+        if (strcmp(smallest_word, current_word) > 0)
+            strcpy(smallest_word, current_word);
+        if (strlen(current_word) == 4){
+            break;
+        }
+    }
+    printf("Smallest word: %s\n", smallest_word);
+    printf("Largest word: %s\n", largest_word);
 
-
-    // int ch, i = 0;
-    // while ((ch = getchar()) != '\n')
-    //     if (i < n)
-    //         str[i++] = ch;
-    // str[i] = '\0';
-    // do {
-    //     printf("Enter word: ");
-    //     while ((ch = getchar()) != '\n'){ 
-    //         printf("hehe");
-    //         // words[i][j] = ch;
-    //         j++;
-    //     }
-    //     // words[i][j] = '\0';
-    //     // i++;
-    // } while (true);
 }
