@@ -15,3 +15,4 @@ int main(void)
 
     printf("You entered the date %s %d, %d\n", months[mm-1], dd, yyyy);
 }
+
