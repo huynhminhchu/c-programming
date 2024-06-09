@@ -7,6 +7,4 @@ int main(){
     int hour, minute;
     printf("Enter a 24-hour time: ");
     scanf("%d:%d",&hour,&minute);
-
-    
 }
