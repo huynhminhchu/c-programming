@@ -1,15 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int (*fptr1)(int);
+typedef int (*fptrToSingleInt)(int);
+typedef int (*fptrToTwoInts)(int,int);
+int add(int, int);
 
-int square(int num) {
- return num*num;
-}
+
+
 
 int main(void)
 {
-    int n = 5;
-    fptr1 = square;
-    printf("%d squared is %d\n",n, fptr1(n));
+    fptrToTwoInts fptrFirst = add;
+    fptrToSingleInt fptrSecond = (fptrToSingleInt)fptrFirst;
+    fptrFirst = (fptrToTwoInts)fptrSecond;
+    printf("%d\n",fptrFirst(5,6));
+}
+
+int add(int a, int b)
+{
+    return a + b;
 }
