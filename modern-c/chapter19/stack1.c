@@ -42,3 +42,4 @@ PUBLIC int pop(void)
         terminate("Error in pop: empty stack.");
     return contents[top--];
 }
+struct t;
