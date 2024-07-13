@@ -1,8 +1,5 @@
-CFLAGS=-Wall -g
+CFLAGS="-Wall"
 
-all: ex1 ex3
-
+all:
 clean:
-	rm -rf ex1 ex3 ex*.dSYM
-
-
+	rm -f ex{1..70}
